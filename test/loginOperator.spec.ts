@@ -14,7 +14,7 @@ describe('login', () => {
 		LoginPage.password.setValue('test123');
 		LoginPage.submitbutton.click();
 
-		expect(OperatorPage.statusText.getText()).to.contain('Som online');
+		expect(OperatorPage.statusText.getText()).to.contain('Jsem online');
 
 		browser.pause(2000);
 	});

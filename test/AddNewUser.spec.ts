@@ -7,7 +7,8 @@ import { LoginPage } from '../pages/login.page';
 import { LoginSteps } from '../steps/login.steps';
 import { UsersPage } from '../pages/Users.page';
 import { LeftBarPage } from '../pages/LeftBar.page';
-import { exists } from 'fs';
+import { UsersSteps } from '../steps/users.steps';
+//import { EuppSteps } from '../steps/'
 
 describe('Login as CompAdmin', () => {
 	it('Should login in Mluvii', () => {
@@ -26,6 +27,22 @@ describe('Add New User', () => {
 		UsersPage.addUserButton.click();
 		browser.pause(500);
 		expect(UsersPage.userCreateFormText.getText()).to.contain('Jméno');
+		UsersSteps.fillUserForm();
+
+		browser.pause(2000);
+	});
+});
+
+describe('Get Confirmation from mail', () => {
+	it('Should open eupp mail and confirm user', () => {
+	
+		LeftBarPage.users.click();
+		browser.pause(500);
+		UsersPage.addUserButton.click();
+		browser.pause(500);
+		expect(UsersPage.userCreateFormText.getText()).to.contain('Jméno');
+		UsersSteps.fillUserForm();
+
 		browser.pause(2000);
 	});
 });
