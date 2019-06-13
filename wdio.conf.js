@@ -38,6 +38,8 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
+        './test/**/AddNewUser.spec.ts',
+        './test/**/loginOperator.spec.ts'
         // 'path/to/excluded/files'
     ],
     //

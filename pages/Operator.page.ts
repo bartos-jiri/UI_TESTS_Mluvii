@@ -11,7 +11,9 @@ class OperatorPageClass extends Page {
 		);
 	}
 
-	get;
+	get logout() {
+		return $('//*[@id="app"]/div/div[2]/div/div/div[1]/div[6]/div/i');
+	}
 }
 
 export const OperatorPage = new OperatorPageClass();

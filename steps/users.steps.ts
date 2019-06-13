@@ -6,11 +6,11 @@ class LoginStepsClass {
 	}
 
 	fillUserForm(
-		firstname: string = 'testuser01',
-		lastname: string = 'test123',
+		firstname: string = 'Testuser04',
+		lastname: string = 'Testovaci',
 		gender: 'male' | 'female' = 'male',
-		email: string = 'testuser01@eupp.cz',
-		newUsername: string = 'testuser01@eupp.cz'
+		email: string = 'testuser04@eupp.cz',
+		newUsername: string = 'testuser04@eupp.cz'
 	) {
 		UsersPage.firstnameField.setValue(firstname);
 		UsersPage.lastnameField.setValue(lastname);
@@ -25,7 +25,17 @@ class LoginStepsClass {
 		UsersPage.usernameField.setValue(newUsername);
 	}
 
-	submitlog() {}
+	submit() {
+		UsersPage.submit.click();
+	}
+
+	setNewPassword(password: string = 'test123') {
+		UsersPage.setPasswordButton.click();
+		browser.pause(1000);
+		UsersPage.newPasswordField.setValue(password);
+		UsersPage.confirmPasswordField.setValue(password);
+		UsersPage.submit.click();
+	}
 }
 
 export const UsersSteps = new LoginStepsClass();

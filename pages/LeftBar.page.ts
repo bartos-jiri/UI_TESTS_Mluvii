@@ -12,6 +12,11 @@ class LeftBarPageClass extends Page {
 			'//*[@id="app"]/div/div[2]/div/div[2]/div[1]/a[1]/div/div/i'
 		);
 	}
+	get inbox() {
+		return browser.$(
+			'//*[@id="app"]/div/div[2]/div/div[2]/div[1]/a[2]/div/div/i'
+		);
+	}
 	get wallboard() {
 		return browser.$('//*[@id="app"]/div/div[2]/div/div/div[1]/a[1]/div/div/i');
 	}

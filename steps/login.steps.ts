@@ -1,4 +1,5 @@
 import { LoginPage } from '../pages/login.page';
+import { OperatorPage } from '../pages/Operator.page';
 
 class LoginStepsClass {
 	open() {
@@ -6,7 +7,7 @@ class LoginStepsClass {
 	}
 
 	fillform(
-		username: string = 'COMPadmin@eupp.cz',
+		username: string = 'companyadmin@eupp.cz',
 		password: string = 'test123'
 	) {
 		LoginPage.username.setValue(username);
@@ -15,6 +16,9 @@ class LoginStepsClass {
 
 	submitlog() {
 		LoginPage.submitbutton.click();
+	}
+	logout() {
+		OperatorPage.logout.click();
 	}
 }
 

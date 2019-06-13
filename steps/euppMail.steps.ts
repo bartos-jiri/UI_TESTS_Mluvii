@@ -7,8 +7,8 @@ class EuppStepsClass {
 
 	fillform(
 		username: string = 'email',
-        password: string = 'email',
-        server: string = 'eupp.cz',
+		password: string = 'email',
+		server: string = 'eupp.cz'
 	) {
 		EuppPage.username.setValue(username);
 		EuppPage.password.setValue(password);
@@ -17,6 +17,13 @@ class EuppStepsClass {
 
 	submitlog() {
 		EuppPage.submitbutton.click();
+	}
+	clickonmail() {
+		EuppPage.themail.click();
+		EuppPage.themail.doubleClick();
+	}
+	clickonmaillink() {
+		EuppPage.themaillink.click();
 	}
 }
 
