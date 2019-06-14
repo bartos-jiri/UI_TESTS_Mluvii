@@ -47,7 +47,7 @@ class UsersPageClass extends Page {
 	// modal page openeg fro email link
 
 	get setPasswordButton() {
-		return browser.$('.btn btn-default=Nastavit heslo');
+		return browser.$('*=Nastavit heslo');
 	}
 	get newPasswordField() {
 		return browser.$('//*[@id="Password"]');

@@ -6,6 +6,7 @@
   "scripts": {
     "prettier": "prettier --write --loglevel warn \"**/**/*.ts\"",
     "test": "rimraf reports/* && npm run report:history && npm run prettier && wdio",
+    "test:dev": "rimraf reports/* && npm run report:history && npm run prettier && wdio --dev",
     "dev": "npm run prettier && wdio --spec",
     "report:history": "if not exist allure-report\\history mkdir allure-report\\history && if not exist allure-results\\history mkdir allure-results\\history && xcopy /s/i/Y allure-report\\history allure-results\\history",
     "clean-report": "rimraf allure-results",

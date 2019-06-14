@@ -38,8 +38,10 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
+        './test/*.d.ts',
         './test/**/AddNewUser.spec.ts',
-        './test/**/loginOperator.spec.ts'
+        './test/**/loginOperator.spec.ts',
+        //'./test/**/answeringTheMails.spec.ts'
         // 'path/to/excluded/files'
     ],
     //
@@ -191,6 +193,7 @@ exports.config = {
     before: function (capabilities, specs) {
         // require('ts-node/register');        
         require('ts-node').register({ files: true });
+        __DEV_MODE__ = process.argv.indexOf('--dev') != -1
     },
     /**
      * Runs before a WebdriverIO command gets executed.

@@ -11,8 +11,8 @@ import { LeftBarPage } from '../pages/LeftBar.page';
 
 describe('login', () => {
 	it('Should login in Mluvii', () => {
-		browser.url('/');
-
+		const url = __DEV_MODE__ ? '?useNew=1' : '/';
+		browser.url(url);
 		LoginPage.username.setValue('testoperator1@eupp.cz');
 		LoginPage.password.setValue('test123');
 		LoginPage.submitbutton.click();
@@ -36,7 +36,7 @@ describe('Answer to the Mails', () => {
 			InboxSteps.writeMail();
 			InboxSteps.sendMail();
 		}
-
+		browser.pause(5000);
 		expect(InboxPage.noOtherMail.getText()).to.contain('Žádné příchozí zprávy');
 	});
 });
