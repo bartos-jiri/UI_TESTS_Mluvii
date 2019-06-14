@@ -23,19 +23,20 @@ describe('login', () => {
 	});
 });
 
-describe('Answer to Mail', () => {
-	it('Accept mail from top and answer', () => {
+describe('Answer to the Mails', () => {
+	it('Accept mail from top and answer - while new mail is existing.', () => {
 		browser.maximizeWindow();
 		LeftBarPage.inbox.click();
-		let x = 0;
-		browser.pause(500);
+
 		const elem = InboxPage.onTopMail;
+		InboxPage.incomingText.waitForExist();
+
 		while (elem.isExisting()) {
 			InboxSteps.acceptMail();
 			InboxSteps.writeMail();
 			InboxSteps.sendMail();
-			browser.pause(50);
-			//x += 1;
 		}
+
+		expect(InboxPage.noOtherMail.getText()).to.contain('Žádné příchozí zprávy');
 	});
 });

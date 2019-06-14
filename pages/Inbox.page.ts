@@ -5,6 +5,9 @@ class InboxPageClass extends Page {
 		super();
 	}
 
+	get incomingText() {
+		return $('//*[@id="app"]/div/div[3]/div[2]/div/div[1]/div[1]/div[1]/div');
+	}
 	get newMailButton() {
 		return $(
 			'//*[@id="app"]/div/div[3]/div[2]/div[1]/div[1]/div[1]/div[2]/button/span'
@@ -28,6 +31,11 @@ class InboxPageClass extends Page {
 	get send() {
 		return $(
 			'//*[@id="thread-view-email-editor"]/div[1]/div[2]/div[2]/div/div/div[3]/button'
+		);
+	}
+	get noOtherMail() {
+		return $(
+			'//*[@id="app"]/div/div[3]/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div'
 		);
 	}
 }
