@@ -15,7 +15,7 @@ class InboxPageClass extends Page {
 	}
 	get onTopMail() {
 		return $(
-			'//*[@id="app"]/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div/div/div[1]/div/div[1]/div/div/div[1]'
+			'//*[@id="app"]/div/div[3]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[1]/div/div[1]/div/div/div[1]'
 		);
 	}
 	get acceptMailButton() {

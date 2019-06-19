@@ -3,23 +3,19 @@
 import { expect } from 'chai';
 import {} from 'chai';
 
-import { LoginPage } from '../pages/login.page';
-import { OperatorPage } from '../pages/Operator.page';
+import { LoginSteps } from '../steps/login.steps';
+import { LoginPage } from '../pages/Login.page';
 import { InboxSteps } from '../steps/inbox.steps';
 import { InboxPage } from '../pages/Inbox.page';
 import { LeftBarPage } from '../pages/LeftBar.page';
 
 describe('login', () => {
 	it('Should login in Mluvii', () => {
-		const url = __DEV_MODE__ ? '?useNew=1' : '/';
-		browser.url(url);
-		LoginPage.username.setValue('testoperator1@eupp.cz');
-		LoginPage.password.setValue('test123');
+		LoginSteps.open();
+		LoginSteps.fillform2('o2');
 		LoginPage.submitbutton.click();
 
-		expect(OperatorPage.statusText.getText()).to.contain('Jsem online');
-
-		browser.pause(500);
+		LoginSteps.submitlog();
 	});
 });
 
@@ -36,7 +32,7 @@ describe('Answer to the Mails', () => {
 			InboxSteps.writeMail();
 			InboxSteps.sendMail();
 		}
-		browser.pause(5000);
+		browser.pause(5500);
 		expect(InboxPage.noOtherMail.getText()).to.contain('Žádné příchozí zprávy');
 	});
 });

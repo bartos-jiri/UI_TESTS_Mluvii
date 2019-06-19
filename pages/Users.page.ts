@@ -44,10 +44,10 @@ class UsersPageClass extends Page {
 		);
 	}
 
-	// modal page openeg fro email link
+	// modal page openeg from email link
 
 	get setPasswordButton() {
-		return browser.$('*=Nastavit heslo');
+		return browser.$('/html/body/div/div/div/div/div[2]/div[2]/div/a');
 	}
 	get newPasswordField() {
 		return browser.$('//*[@id="Password"]');

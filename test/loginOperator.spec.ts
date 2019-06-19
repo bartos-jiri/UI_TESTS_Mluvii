@@ -4,17 +4,17 @@ import { expect } from 'chai';
 import {} from 'chai';
 
 import { LoginPage } from '../pages/login.page';
+import { LoginSteps } from '../steps/login.steps';
 import { OperatorPage } from '../pages/Operator.page';
 
 describe('login', () => {
 	it('Should login in Mluvii', () => {
 		browser.url('/');
 
-		LoginPage.username.setValue('testoperator2@eupp.cz');
-		LoginPage.password.setValue('test123');
-		LoginPage.submitbutton.click();
+		LoginSteps.fillform2('o1');
+		LoginSteps.submitlog();
 
-		expect(OperatorPage.statusText.getText()).to.contain('Jsem online');
+		expect(OperatorPage.statusText.getText()).to.contain(' Jsem online');
 
 		browser.pause(2000);
 	});
