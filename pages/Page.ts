@@ -1,3 +1,6 @@
 export class Page {
-	constructor() {}
+	protected browser: WebdriverIO.BrowserObject;
+	constructor(selectedBrowser?: WebdriverIO.BrowserObject) {
+		this.browser = selectedBrowser ? selectedBrowser : browser;
+	}
 }

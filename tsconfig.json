@@ -22,7 +22,9 @@
         "types": ["@wdio/mocha-framework", "node", "chai", "@wdio/sync"]
     },    
     "include": [
-        "./test/**/*.ts"
+        "./test/**/*.ts",
+        "./pages/**/*.ts",
+        "./steps/**/*.ts"
     ],
     "exclude": [
       "./node_modules"

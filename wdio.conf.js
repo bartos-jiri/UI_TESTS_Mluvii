@@ -39,10 +39,10 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         './test/*.d.ts',
-        './test/**/addNewUser.spec.ts',
-        './test/**/loginOperator.spec.ts',
-        './test/**/session.spec.ts',
-        //'./test/**/answeringTheMails.spec.ts'
+        // './test/AddNewUser.spec.ts',
+        // './test/loginOperator.spec.ts',
+        // './test/**/session.spec.ts',
+        './test/answeringTheMails.spec.ts'
         //'path/to/excluded/files'
     ],
     //
@@ -68,12 +68,12 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: {
-        browserA: {
+        firstChrome: {
             capabilities: {
                 browserName: 'chrome'
             }
         },
-        browserB: {
+        secondChrome: {
             capabilities: {
                 browserName: 'chrome'
             }

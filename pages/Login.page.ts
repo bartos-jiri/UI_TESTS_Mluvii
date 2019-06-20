@@ -1,12 +1,12 @@
 import { Page } from './Page';
 
 class LoginPageClass extends Page {
-	constructor() {
-		super();
+	constructor(selectedBrowser?: WebdriverIO.BrowserObject) {
+		super(selectedBrowser);
 	}
 
 	get username() {
-		return $('#Username');
+		return this.browser.$('#Username');
 	}
 	get password() {
 		return $('#password');

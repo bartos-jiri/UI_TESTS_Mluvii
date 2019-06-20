@@ -2,7 +2,6 @@
 
 import { expect } from 'chai';
 import {} from 'chai';
-//import { multiremote } from 'webdriverio';
 
 import { LoginSteps } from '../steps/login.steps';
 
@@ -17,30 +16,17 @@ describe('login', () => {
 });
 
 describe('Start session', () => {
-	it('Should start session, Accept Client and chat'), () => {};
+	it('Should start session, Accept Client and chat', () => {
+		firstChrome.url('/');
+		secondChrome.url('/');
 
-	(async () => {
-		const browser = await multiremote({
-			myChromeBrowser: {
-				capabilities: {
-					browserName: 'chrome',
-				},
-			},
-			myFirefoxBrowser: {
-				capabilities: {
-					browserName: 'firefox',
-				},
-			},
-		});
+		firstChrome.$('#Username').setValue('I am browser A');
+		secondChrome.$('#Username').setValue('I am browser B');
 
-		// open url with both browser at the same time
-		await browser.url('http://json.org');
+		firstChrome.pause(1000);
+		secondChrome.pause(1000);
 
-		// click on an element at the same time
-		const elem = await browser.$('#someElem');
-		await elem.click();
-
-		// only click with one browser (Firefox)
-		await elem.myFirefoxBrowser.click();
-	})();
+		firstChrome.$('#Username').setValue('ROFL');
+		secondChrome.$('#Username').setValue('OMG');
+	});
 });
